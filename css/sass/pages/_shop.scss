@@ -1,0 +1,100 @@
+@use '../helpers/variables' as *;
+@use '../helpers/mixixn' as *;
+.shop{
+    .filtration{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        text-align: center;
+        margin: 2rem ;
+       .filterbtn{
+        padding: .75rem 1.5rem;
+        cursor: pointer;
+        border-radius: 7px;
+         
+           background: $primary-color;
+           @include shadow(.2);
+           color: $text-color;
+           transition:$transition;
+           &:hover,&.active{
+            background:$gradient; 
+           }
+         
+       }
+    }
+
+    &__content{
+        @include grid(300px,1.5rem);
+        .product{
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            transition:.5s linear;
+            @include shadow(.3);
+            &:hover .image .fav{
+                transform: scale(1);
+              }
+            .image{
+                height: 20rem;
+                overflow: hidden;
+                background:$gradient ;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition:.5s ease-in-out;
+                cursor: pointer;
+               
+                   .fav{
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    font-size: var(--p-font);
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    border-radius: 50%;
+                    color: $primary-color;
+                    text-align: center;
+                    background-color: $secondary-color;
+                    transition: $transition;
+                    transform: scale(0);
+                }
+             
+                img{
+                    width: 300px;
+                    transition:.3s linear;
+                }
+                &:hover img{
+                   transform: scale(1.1);
+                }
+            }
+            .details{
+                padding: 1rem;
+                h3{
+                    font-size: var(--p-font);
+                    margin-bottom: 1rem;
+                }
+                .review{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    span{
+                        padding: .2rem .7rem;
+                        border-radius: 7px;
+                        background-color: $secondary-color;
+                        color: white;
+                        font-size: var(--link-font);
+
+                    }
+                    .rate i{
+                        color:$secondary-color ;
+                        font-size: var(--link-font);
+                    }
+                }
+            }
+        }
+    }
+}

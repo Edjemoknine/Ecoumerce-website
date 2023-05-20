@@ -1,0 +1,45 @@
+// =================Responsive =====================
+$mobile:767px;
+@mixin mobile{
+    @media (max-width:$mobile) {
+        @content;
+    }
+}
+@include mobile{
+    
+}
+
+//===============Another way to create responsive =====================
+
+@mixin breakpoint($point){
+    @if $point=='small'{
+        @media (max-width:930px) {
+            @content;
+        }
+    }
+    @else if $point=='mobile'{
+        @media (max-width:450px) {
+            @content;
+        }
+    }@else if $point=='tablet'{
+        @media (max-width:790px) {
+            @content;
+        }
+    }
+    @else if $point=='medium'{
+        @media (max-width:1199px) {
+            @content;
+        }
+    }
+} 
+
+@include breakpoint(tablet){
+body{
+    font-size: 55%;
+}
+}
+@include breakpoint(mobile){
+    body{
+        font-size: 50%;
+    }
+}

@@ -1,0 +1,51 @@
+@use '../helpers/variables' as *;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    outline: none;
+    border: none;
+    text-decoration: none;
+   
+    font-family: cursive;
+    
+}
+img{
+    max-width: 100%;
+ 
+ }
+
+body{
+    font-size: 62.25%;
+    background-color: $primary-color;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+section{
+    padding:4rem 0 3rem ;
+}
+
+
+// =======================================
+
+::-webkit-scrollbar{
+    width: 7px;
+    border-radius: 20px;
+   
+
+    &-thumb{
+        background-color: $secondary-color;
+        border-radius: 20px;
+    }
+   
+}
+
+
+

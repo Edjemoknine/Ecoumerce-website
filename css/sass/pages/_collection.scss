@@ -1,0 +1,114 @@
+@use '../helpers/variables' as *;
+@use '../helpers/mixixn' as *;
+@use '../components/buttons' as *;
+.collection{
+  
+
+    &__content{
+        @include grid(300px,1.75rem);
+       
+        .product{
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            transition:.3s linear;
+            @include shadow(.3);
+            display: none;
+            
+            &:nth-of-type(1),
+            &:nth-of-type(2),
+            &:nth-of-type(3){
+                display: inline-block;
+            }
+
+            &:hover{
+                transform: scale(1.05);
+            }
+            &:hover .image{
+                background: $gradient;
+                transition:.5s ease-in-out;
+            }
+            &:hover .info .btn,.fav{
+              transform: scale(1);
+            }
+            &:hover .image .fav{
+                transform: scale(1);
+              }
+            .image{
+                height: 20rem;
+                overflow: hidden;
+                background:$dark-primary ;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+               transition: $transition;
+                cursor: pointer;
+                .fav{
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    font-size: var(--p-font);
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    border-radius: 50%;
+                    color: $primary-color;
+                    text-align: center;
+                    background-color: $secondary-color;
+                    transition: $transition;
+                    transform: scale(0);
+                }
+                img{
+                    width: 300px;
+                    transition:.3s linear;
+                }
+             
+            }
+            .details{
+                padding: 1rem;
+
+                .info{
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 1rem;
+                    justify-content: space-between;
+                span{
+                    padding: .5rem;
+                    width: 130px;
+                   transform: scale(0);
+                    transition: $transition;
+                }
+                }
+                h3{
+                    font-size: var(--p-font);
+                    margin-bottom: 1rem;
+                    color: $text-color;
+                }
+                .review{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    span{
+                       
+                        color:$grey-primary;
+                        font-size: var(--link-font);
+
+                    }
+                    .rate i{
+                        color:$secondary-color ;
+                        font-size: var(--link-font);
+                    }
+                }
+            }
+        }
+    }
+}
+
+#showbtn{
+  
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    width: 170px;
+}

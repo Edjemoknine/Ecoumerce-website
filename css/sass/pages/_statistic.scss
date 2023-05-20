@@ -1,0 +1,39 @@
+@use '../helpers/variables'as *;
+@use '../helpers/mixixn'as *;
+
+.statistic{
+    background-color: $light-bg;
+    &__content{
+        @include grid(250px ,1.5rem);
+
+        .stat{
+            text-align: center;
+            i{
+                width: 80px;
+                height: 80px;
+                border-radius: 8px;
+                background-color: $primary-color;
+                line-height: 80Px;
+                text-align: center;
+                color: $secondary-color;
+                font-size: var(--h3-font);
+                margin-bottom: 2rem;
+                transition: $transition;
+                cursor: pointer;
+                @include shadow(.1);
+                &:hover{
+                    color: white;
+                    background-color: $secondary-color;
+                }
+            }
+            h3{
+                font-size: var(--p-font);
+                margin-bottom: .75rem;
+            }
+            p{
+                font-size: var(--link-font);
+            }
+
+        }
+    }
+}

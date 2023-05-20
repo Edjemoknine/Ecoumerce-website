@@ -1,0 +1,138 @@
+@use '../helpers/variables' as*;
+@use '../helpers/mixixn' as*;
+@use '../helpers/functions' as*;
+@use '../components/responsive' as*;
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: .75rem 0;
+    transition: $transition;
+     z-index: 3000;
+    &.onscroll{
+        background-color: $primary-color;
+        @include shadow(.3);
+     
+    }
+    .container{
+        @include flexcenter(row,space-between,1Rem);
+    }
+    .logo{
+        color: $text-color;
+        font-size: var(--h3-font);
+        font-weight:weight(bold);
+        margin-bottom: 1REM;
+        span{
+            color: $secondary-color;
+            font-size:1.7rem;
+            padding-left: .5rem;
+            transform: rotate(-40deg);
+        }
+    }
+    .navbar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include breakpoint(tablet){
+     
+         position: absolute;
+         top: 100%;
+         right: -100%;
+         width: 100%;
+         height: 300px;
+         flex-direction: column;
+         background-color:$primary-color;
+         @include shadow(.1);
+         z-index: 3000;
+         transition: $transition;
+        }
+        &.open{
+            right: 0;
+        }
+        a{
+            display: inline-block;
+            margin:0 1rem;
+            font-size: var(--link-font);
+            color: $text-color;
+            transition: .3s ease;
+            font-weight: weight(medium);
+            @include breakpoint(tablet){
+                margin-bottom: 1rem;
+                font-size: var(--p-font);
+            }
+            &:hover{
+                color: $secondary-color;
+            }
+        }
+    }
+    .links{
+        display: flex;
+        align-items: center;
+        #menu{
+            display: none;
+            @include breakpoint(tablet){
+                display: block;
+            }
+        }
+        .navbtn{
+          
+            display: inline-block;
+            font-size: var(--p-font);
+            color: $text-color;
+            padding: .5rem 1rem;
+            border-radius: 7px;
+            cursor: pointer;
+            &:hover{
+                background-color: $light-bg;
+            }
+       
+        }
+        #not-btn{
+            position: relative;
+        &::before{
+            position: absolute;
+            content: '';
+            width: 7px ;
+            height: 7px ;
+            background-color: $secondary-color;
+            border-radius: 50%;
+            left: 55%;
+            top: 7px;
+            border: 0.5px solid $text-color;
+            @include breakpoint(tablet){
+                display: none;
+            }
+        }
+
+        }
+    }
+
+    .search-form{
+        position: absolute;
+        top: 100%;
+        width: 50%;
+        right: 17%;
+        background-color: $light-bg;
+        @include shadow(.4);
+        padding: .3rem;
+        border-radius: .5rem;
+        transition: $transition;
+        opacity: 0;
+        transform: scale(0);
+        @include breakpoint(tablet){
+            width: 90%;
+            right: 1.5rem;
+        }
+
+        input{
+            width: 100%;
+            padding: .8rem;
+            font-size: var(--link-font);
+        }
+        &.open{
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}

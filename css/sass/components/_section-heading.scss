@@ -1,0 +1,43 @@
+@use '../helpers/variables'as *;
+
+.heading{
+  text-align: center;
+  margin-bottom: 3.5rem;
+  
+p{  
+    font-size:var(--p-font);
+    position: relative;
+    text-transform: uppercase;
+    color: $text-color;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    
+    &::before{
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        width: 100%;
+        height: 3px ;
+        background-color: $secondary-color;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        width: 7px ;
+        height: 7px ;
+        border-radius: 50%;
+        background-color: $secondary-color;
+        bottom: -12px;
+        left: 70%;
+    }
+}
+h2{
+    text-transform: capitalize;
+    text-align: center;
+    color: $text-color;
+    margin-top: 1rem;
+    font-size: var(--h2-font);
+
+}
+}

@@ -1,0 +1,111 @@
+
+
+// 2 prefixer mixin
+// 3 animation prefixes
+
+@mixin Animation ($anime-name){
+    @keyframes #{$anime-name} {
+       
+       @content;
+    }
+
+}
+
+@mixin shadow($opacity){
+    box-shadow: 0 5px 15px rgba($color: #000000,$alpha:$opacity);
+}
+
+
+// =======================Pseudo mixin===========================
+
+@mixin pseudo($loc:after,$top,$left,$width,$height){
+    position: relative;
+    &::#{$loc}{
+        content: '';
+        position: absolute;
+        top: $top;
+        left: $left;
+        width: $width;
+        height: $height;
+
+    }
+}
+
+//====================overlay mixin===================================================
+
+@mixin overlay($top,$width,$height,$color,$opacity){
+    position: absolute;
+    top: $top;
+    left:0;
+    width: $width;
+    height: $height;
+    z-index: -1;
+    background-color: rgba( $color,  $opacity);
+}
+
+// ===================== Display Mixin=================================================
+
+@mixin flexcenter($direction,$justify,$gap){
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+    flex-direction: $direction;
+    gap: $gap;
+    }
+
+//========================= Grid Mixin================================================ 
+
+@mixin grid($size,$gap){
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax($size,1fr));
+    gap: $gap;
+}    
+
+ @mixin grid-position($align,$justify){
+    align-items: $align;
+    justify-items: $justify;
+ }
+
+//======================== Background Mixixn ========================================
+@mixin background-color($color){
+    background-color: $color;
+    color:text-colors($color) ;
+}
+
+// ========================== Cover mixin ============================================
+@mixin cover{
+    position: absolute;
+    inset: 0;
+}
+
+// ======================== position-absolute===========================
+
+@mixin position($top,$left,$width,$height){
+        position: absolute;
+        top:$top ;
+        left:$left ;
+        width:$width ;
+        height:$height ;
+}
+
+// =============== poasition-center ====================================
+
+@mixin center-position{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+// ============================ Create Border Triangle========================================
+
+
+@mixin triangle($size,$direction,$top,$left,$translate){
+     position: absolute;
+     border: $size solid transparent;
+     top: $top;
+     left:$left ;
+     transform:$translate;
+    
+}

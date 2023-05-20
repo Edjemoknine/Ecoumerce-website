@@ -1,0 +1,106 @@
+ @use '../helpers/variables'as *;
+ @use '../helpers/mixixn'as *;
+ @use '../helpers/functions'as *;
+
+ .footer{
+    background-color:$light-bg ;
+
+    &__content{
+        @include grid(200px,1.5rem);  
+        // display: flex;
+        // align-items: flex-start;
+        // flex-wrap: wrap;
+        // justify-content: space-between;
+     
+        .col{
+            &:first-of-type{
+                //  width: 300px;
+                
+                .logo{
+                    color: $secondary-color;
+                    font-size: var(--h4-font);
+                    font-weight:weight(bold);
+                    margin-bottom: 1REM;
+                    span{
+                        color: $secondary-color;
+                        font-size:1.7rem;
+                        padding-left: .5rem;
+                        transform: rotate(-40deg);
+                    }
+                 }
+                 p {
+                    width: 80%;
+                    margin: 1rem 0;
+                    line-height: 1.5;
+                    font-size: var(--link-font);
+                    color: $grey-primary;
+                 }
+                 .social{
+                    margin-bottom: 1rem;
+                    a{
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 35px ;
+                        height: 35px;
+                        border-radius: 50%;
+                        background-color: $secondary-color;
+                        color: $primary-color;
+                        font-size: var(--p-font);
+                        margin-right: .35rem ;
+                        transition: $transition;
+                        &:hover{
+                            transform: scale(1.05);
+                        }
+                    }
+                 }
+                 .created{
+                    span{
+                        display: block;
+                        color: $secondary-color;
+                        font-size: var(--small-font);
+                    }
+                 }
+        }
+ 
+  
+    h3{
+        font-size: var(--h4-font);
+        color: $text-color;
+        margin-bottom: 1rem;
+        margin-top: .5rem;
+    }
+    li{
+        margin-bottom: 1rem;
+        a{  
+            display: block;
+            font-size: var(--small-font);
+            color: $grey-primary;
+            transition: $transition;
+            font-weight: weight(regular);
+            &:hover{
+                color: $secondary-color;
+                transform: translateX(5px);
+            }
+        }
+    }
+    &:last-of-type{
+        li{
+            font-size: var(--small-font);
+            font-weight: weight(medium);
+            color: $grey-primary;
+            i{
+                width: 28px;
+                height: 28px;
+                line-height: 28px;
+                border-radius: 50%;
+                background-color: $secondary-color;
+                color: $primary-color;
+                text-align: center;
+                margin-right: .25rem;
+            }
+        }
+    }
+ }
+}
+}

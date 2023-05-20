@@ -1,0 +1,46 @@
+@use '../helpers/variables'as*;
+@use '../helpers/mixixn'as*;
+@use '../helpers/functions'as*;
+
+.blogs{
+    &__content{
+        @include grid(300px,1.5rem);
+       
+        .blog{
+            border-radius: 1rem;
+            @include shadow(.2);
+            overflow: hidden;
+        .image{
+            height: 25rem;
+            width: 100%;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .details{
+            padding: 1rem;
+            text-align: center;
+            margin: 0 auto;
+            width: 80%;
+            h4{
+                font-size: var(--h4-font);
+                margin-bottom: .5rem;
+                color: $secondary-color;
+
+            }
+            p{
+                font-size:.8rem;
+                font-weight: weight(medium);
+                margin-bottom: .5rem;
+            }
+            span{
+                font-size: var(--small-font);
+                font-weight: weight(medium);
+                color: $grey-primary;
+            }
+        }
+    }
+}}

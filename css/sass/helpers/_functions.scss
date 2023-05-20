@@ -1,0 +1,67 @@
+@use 'variables' as*;
+// ============= font-weight ================
+
+
+@function weight($weight){
+    @return map-get($font-weight, $weight );
+}
+// ============================= Social Function =============================
+$socials:(
+    'youtube':red,
+    'facebook':blue,
+);
+
+@each $social,$color in $socials{
+   .#{$social}{
+    background-color: $color;
+    color: white;
+   }
+}
+// ===================== function for change color for theme ==================
+@function text-colors($color){
+    @if(lightness($color) > 70%){
+        @return #333;
+    }@else{
+        @return #fff;
+    }
+}
+
+
+//================== Create defferent font size for defferent classes========== 
+
+//===========  do this for create your framework for styling==================
+// =================== Create margin and padding ==================
+
+
+// $steps:(1,2,3,4,5);
+
+// @each $step in $steps{
+//     .my-#{$step}{
+//         margin: #{$step*10Px};
+//     }
+//     .mx-#{$step}{
+//      margin: $step*10px 0;
+//     }
+//     .p-#{$step}{
+//         padding: $step*10px;
+//     }
+// }
+
+
+
+// ========================================================================
+
+
+
+@function color($clr-name){
+   @return map-get($colors , $clr-name );
+}
+
+
+// ==================================change transition-dely for eache link in menu =======================================
+
+@for $i from 1 through 5{
+    .link:nth-child(#{$i}){
+        transition-delay: $i*0.1s;
+    }
+}

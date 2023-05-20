@@ -1,0 +1,43 @@
+@use 'mixixn' as*;
+@use '../components/responsive' as*;
+
+//===========================colors======================
+
+$primary-color:#fdfdfd;
+$dark-primary:darken($primary-color,10%);
+$grey-primary:darken($primary-color,48%);
+$secondary-color:rgb(255, 0, 51);
+$light-bg:lighten($secondary-color,47%);
+$text-color:black;
+$blue-color:rgb(64, 0, 255);
+$light-blue:lighten($blue-color,10%);
+$gradient:linear-gradient(to bottom,rgb(238, 183, 81),rgb(255, 0, 0));
+
+$transition:.4s ease;
+
+
+
+// ========================Font-Weight===========================
+
+$font-weight:(
+    'small':100,
+    'semi':300,
+   'regular':400,
+   'medium':600,
+   'bold':700,
+   'bolder':800,
+);
+
+// =========================Fonts=========================
+:root{
+--h1-font:clamp(60px,7vw,150px);
+--h2-font:2.2rem;
+--h3-font:2rem;
+--h4-font:1.2rem;
+--p-font:1.02rem;
+--link-font:.95rem;
+--small-font:.8rem;
+}
+
+
+
